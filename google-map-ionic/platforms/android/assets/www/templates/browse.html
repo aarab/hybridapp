@@ -1,0 +1,32 @@
+<ion-view title="Browse">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header" scroll="false">
+   <ion-header-bar align-title="left" class="bar-positive">
+      <div class="buttons">
+        <a ng-click="showallmarker()" class="button button-icon icon ion-android-pin">showallmarker</a>
+      </div>
+      <div class="buttons">
+          <a ng-click="findme()" class="button button-icon icon ion-android-locate"> </a>
+      </div>
+  </ion-header-bar>
+      
+	<div id="map_canvas">
+	    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+	    	<ui-gmap-markers models="markers" coords="'self'" icon="'icon'" click="onMarkerClick">
+                <ui-gmap-windows show="show">
+                    <div ng-non-bindable>{{content}}</div>
+                </ui-gmap-windows>
+        	</ui-gmap-markers>
+	    </ui-gmap-google-map>
+        
+	</div>
+    
+  </ion-content>
+    <ion-footer-bar class="bar-light">
+      <a ng-click="findme()" class="button button-icon icon ion-android-locate">Find Me</a>
+    </ion-footer-bar>
+    
+</ion-view>
